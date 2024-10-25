@@ -59,14 +59,19 @@ def gen_athlete_page(data, outfile):
       <title>{data["name"]}</title>
    </head>
    <body>
-   <a href = "#main">Skip to Main Content</a>
-   <nav>
-     <ul>
-        <li><a href="index.html">Home Page</a></li>
-        <li><a href="mens.html">Men's Team</a></li>
-        <li><a href="womens.html">Women's Team</a></li>
-     </ul>
-   </nav>
+  <header>
+      <div class="top-banner">
+        <a href="../index.html">Ann Arbor Skyline</a>
+      </div>
+    </header>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#teams-section">Teams</a></li>
+        <li><a href="#calandar">Calandar</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#contact-us">Contact US</a></li>
+      </ul>
+    </nav>
    <header>
       <!--Athlete would input headshot-->
        <h1>{data["name"]}</h1>

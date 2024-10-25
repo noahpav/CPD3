@@ -1,0 +1,7 @@
+/* index.css */
+
+/* Grid Template Setup */
+.team-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
