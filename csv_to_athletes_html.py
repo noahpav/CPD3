@@ -1,7 +1,8 @@
+"""CSV To Athlete HTML Script From Sample Code."""
 import csv
 
 def process_athlete_data(file_path):
-
+   """Process Athlete Data."""
    # Extracting athlete stats by year
    records = []
 
@@ -41,6 +42,7 @@ def process_athlete_data(file_path):
    }    
 
 def gen_athlete_page(data, outfile):
+   """Generate Athlete Pages."""
    # template 
    # Start building the HTML structure
    html_content = f'''<!DOCTYPE html>
@@ -48,31 +50,29 @@ def gen_athlete_page(data, outfile):
    <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
-       <!-- Get your own FontAwesome ID -->
-       <script src="https://kit.fontawesome.com/YOUR_ID.js" crossorigin="anonymous"></script>
-
+      <!-- Get your own FontAwesome ID -->
+      <script src="https://kit.fontawesome.com/YOUR_ID.js" crossorigin="anonymous"></script>
 
       <link rel = "stylesheet" href = "/css/reset.css">
       <link rel = "stylesheet" href = "/css/global.css">
       <link rel = "stylesheet" href = "/css/athlete.css">
-      
 
       <title>{data["name"]}</title>
    </head>
    <body>
-  <header>
+   <header>
       <div class="top-banner">
-        <a href="../index.html">Ann Arbor Skyline</a>
+         <a href="../index.html">Ann Arbor Skyline</a>
       </div>
-    </header>
-    <nav class="navbar">
+   </header>
+   <nav class="navbar">
       <ul>
-        <li><a href="#athlete-sr-table">Records</a></li>
-        <li><a href="#results">Results</a></li>
-        <li><a href="#gallery">Gallery</a></li>
+         <li><a href="#athlete-sr-table">Records</a></li>
+         <li><a href="#results">Results</a></li>
+         <li><a href="#gallery">Gallery</a></li>
          <li><a href="#contact-us">Contact</a></li>
       </ul>
-    </nav>
+   </nav>
    <section id="profile">
       <!--Athlete would input headshot-->
       <img src="../images/profiles/{data["athlete_id"]}.jpg" alt="Athlete headshot" width="200"> 
@@ -107,64 +107,57 @@ def gen_athlete_page(data, outfile):
       html_content += sr_row
 
    html_content += '''                   
-                </tbody>
-                  </table>
-                     </section>
-
-                        <section id="athlete-result-table">
-
-                           <h2>Race Results</h2>
-                           
-                           <table id="athlete-table">
-                              <thead>
-                                 <tr>
-                                    <th>Race</th>
-                                    <th>Time</th>
-                                    <th>Place</th>
-                                    <th>Comments</th>
-                                 </tr>
-                              </thead>
-
-                              <tbody>
+                  </tbody>
+            </table>
+      </section>
+      <section id="athlete-result-table">
+            <h2>Race Results</h2>
+            <table id="athlete-table">
+                  <thead>
+                        <tr>
+                           <th>Race</th>
+                           <th>Time</th>
+                           <th>Place</th>
+                           <th>Comments</th>
+                        </tr>
+                  </thead>
+                  <tbody>
                   '''
-
+   
    # add each race as a row into the race table 
    for race in data["race_results"]:
       race_row = f'''
-                                 <tr class="result-row">
-                                    <td>
-                                       <a href="{race["url"]}">{race["meet"]}</a>
-                                    </td>
-                                    <td>{race["time"]}</td>
-                                    <td>{race["finish"]}</td>
-                                     <td>{race["comments"]}</td>
-                                 </tr>
-      '''
+                        <tr class="result-row">
+                              <td>
+                                 <a href="{race["url"]}">{race["meet"]}</a>
+                              </td>
+                              <td>{race["time"]}</td>
+                              <td>{race["finish"]}</td>
+                              <td>{race["comments"]}</td>
+                        </tr>
+                  '''
       html_content += race_row
 
    html_content += '''
-                              </tbody>
-
-                        </table>
-                     </section>
-                     <section id = "gallery">
-                     <h2>Gallery</h2>
-                      </section>
-                     </main>
-                     <footer id="contact-us">
-                     <p>
-                     Skyline High School<br>
-                     <address>
-                     2552 North Maple Road<br>
-                     Ann Arbor, MI 48103<br><br>
-
-                     <a href = "https://sites.google.com/aaps.k12.mi.us/skylinecrosscountry2021/home">XC Skyline Page</a><br>
-                    Follow us on Instagram <a href = "https://www.instagram.com/a2skylinexc/"><i class="fa-brands fa-instagram" aria-label="Instagram"></i>  </a> 
-
-
-                     </footer>
-               </body>
-         </html>
+                  </tbody>
+            </table>
+      </section>
+      <section id = "gallery">
+         <h2>Gallery</h2>
+      </section>
+   </main>
+   <footer id="contact-us">
+      <p>
+         Skyline High School<br>
+         <address>
+            2552 North Maple Road<br>
+            Ann Arbor, MI 48103<br><br>
+               <a href = "https://sites.google.com/aaps.k12.mi.us/skylinecrosscountry2021/home">XC Skyline Page</a><br>
+                  Follow us on Instagram <a href = "https://www.instagram.com/a2skylinexc/"><i class="fa-brands fa-instagram" aria-label="Instagram"></i>
+               </a> 
+   </footer>
+   </body>
+   </html>
    '''
 
    with open(outfile, 'w') as output:
@@ -172,7 +165,7 @@ def gen_athlete_page(data, outfile):
 
 
 def main():
-
+   """Run the Script."""
    import os
    import glob
 
