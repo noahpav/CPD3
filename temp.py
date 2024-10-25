@@ -83,9 +83,10 @@ html_template = """
       <!-- Photo Gallery Section -->
       <section id="gallery"  class="gallery">
         <h2>Photo Gallery</h2>
-        <div class="photo-grid">
-        {gallery_section}
-        </div>
+        <!-- <div class="photo-grid"> -->
+        <!-- {gallery_section} -->
+        <!-- </div> -->
+        
       </section>
     </main>
 
