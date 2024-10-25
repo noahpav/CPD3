@@ -1,0 +1,57 @@
+/* athlete.css */
+
+/* Grid Template Setup */
+#profile {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    padding: 15px 5px;
+}
+
+/* Athlete Page General Styling */
+h2 {
+    text-align: center;
+    line-height: 1.2rem;
+}
+
+/* Profile Section Styling */
+h1{
+    text-align: center;
+    font-size: 1.2rem;
+    padding-top: 10px;
+    padding-bottom: 20px;
+    line-height: 1;
+}
+#profile h3 {
+    text-align: left;
+    font-size: 0.7rem;
+    padding-bottom: 10px;
+}
+#profile img {
+    padding: 10px;
+}
+
+/* Season Reacord Section Styling */
+#athlete-sr-table {
+    width: 100%;
+    padding-bottom: 10px;
+}
+
+/* Race Results Section Styling */
+#athlete-result-table {
+    width: 100%;
+    padding-bottom: 10px;
+}
+#athlete-result-table thead {
+    text-align: center;
+    font-size: 1.1rem;
+}
+#athlete-table {
+    border-spacing: 2px 6px;
+}
+.result-row {
+    width: 100%;
+    text-align: center;
+    line-height: 1.15;
+    font-size: 0.9rem;
+}

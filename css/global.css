@@ -15,20 +15,27 @@ body {
     background-color: #f4f4f4;
     margin: 0;
     padding: 0;
+    overflow-x: hidden;
 }
 
-/* Basic layout for header, footer, and main content */
+/* Basic layout for header, footer, section, and main content */
 header {
     background: #333;
     color: #fff;
-    padding: 10px 0;
+    padding: 10px 5px;
     text-align: center;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 header a {
     color: #fff;
     text-decoration: none;
     font-size: 1.5em;
+}
+
+main {
+    padding: 15px 5px;
 }
 
 footer {
@@ -41,8 +48,11 @@ footer {
 /* Navigation styles */
 .navbar {
     display:  grid;
-    justify-content: center;
+    width: 100%;
+    padding: 0 5px;
     border: solid;
+    box-sizing: border-box;
+    text-align: center;
 }
 
 .navbar ul {
@@ -51,9 +61,4 @@ footer {
     padding: 8px;
     /* margin: 3px; */
     grid-template-columns: repeat(4, 1fr)
-}
-
-/* Main content section */
-main {
-    padding: 15px;
 }

@@ -5,3 +5,25 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
 }
+
+
+/* General Page Syling */
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1.8rem;
+}
+
+/* Teams Section Styling */
+table td {
+    text-align: center;
+}
+
+/* Gallery Section Styling */
+#gallery {
+    text-align: center;
+}

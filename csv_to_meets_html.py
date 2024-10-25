@@ -33,22 +33,19 @@ def csv_to_html(csv_filename, output_folder):
 <link rel="stylesheet" href="../css/style.css">
 </head>
    <body>
-   <a href = "#main">Skip to Main Content</a>
-   <nav>
-     <ul>
-        <li><a href="index.html">Home Page</a></li>
-        <li><a href="#summary">Summary</a></li>
-        <li><a href="#team-results">Team Results</a></li>
-        <li><a href="#individual-results">Individual Results</a></li>
+    <header>
+      <div class="top-banner">
+        <a href="index.html">Ann Arbor Skyline</a>
+      </div>
+    </header>
+    <nav class="navbar">
+      <ul>
+        <li><a href="#teams-section">Teams</a></li>
+        <li><a href="#calandar">Calandar</a></li>
         <li><a href="#gallery">Gallery</a></li>
-     </ul>
-   </nav>
-   <header>
-      <!--Meet Info-->
-       
-        <h1><a href="{link_url}">{link_text}</a></h1>
-        <h2>{h2_text}</h2>
-</header>
+        <li><a href="#contact-us">Contact US</a></li>
+      </ul>
+    </nav>
    <main id = "main">
 
 

@@ -52,8 +52,9 @@ def gen_athlete_page(data, outfile):
        <script src="https://kit.fontawesome.com/YOUR_ID.js" crossorigin="anonymous"></script>
 
 
-      <link rel = "stylesheet" href = "css/reset.css">
-      <link rel = "stylesheet" href = "css/style.css">
+      <link rel = "stylesheet" href = "/css/reset.css">
+      <link rel = "stylesheet" href = "/css/global.css">
+      <link rel = "stylesheet" href = "/css/athlete.css">
       
 
       <title>{data["name"]}</title>
@@ -66,20 +67,26 @@ def gen_athlete_page(data, outfile):
     </header>
     <nav class="navbar">
       <ul>
-        <li><a href="#teams-section">Teams</a></li>
-        <li><a href="#calandar">Calandar</a></li>
+        <li><a href="#athlete-sr-table">Records</a></li>
+        <li><a href="#results">Results</a></li>
         <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact-us">Contact US</a></li>
+         <li><a href="#contact-us">Contact</a></li>
       </ul>
     </nav>
-   <header>
+   <section id="profile">
       <!--Athlete would input headshot-->
-       <h1>{data["name"]}</h1>
       <img src="../images/profiles/{data["athlete_id"]}.jpg" alt="Athlete headshot" width="200"> 
-   </header>
+      <div>
+         <h1>{data["name"]}</h1>
+         <h3>Grade: </h3>
+         <h3>Experience: </h3>
+         <h3>Top Place: </h3>
+         <h3>Personal Record: </h3>
+      </div>
+   </section>
    <main id = "main">
       <section id= "athlete-sr-table">
-         <h2>Athlete's Seasonal Records (SR) per Year</h2>
+         <h2>Season Records (SR)</h2>
             <table>
                   <thead>
                      <tr>
@@ -104,18 +111,17 @@ def gen_athlete_page(data, outfile):
                   </table>
                      </section>
 
-                        <h2>Race Results</h2>
-
                         <section id="athlete-result-table">
-                           
 
+                           <h2>Race Results</h2>
+                           
                            <table id="athlete-table">
                               <thead>
                                  <tr>
                                     <th>Race</th>
-                                    <th>Athlete Time</th>
-                                    <th>Athlete Place</th>
-                                    <th>Race Comments</th>
+                                    <th>Time</th>
+                                    <th>Place</th>
+                                    <th>Comments</th>
                                  </tr>
                               </thead>
 
@@ -145,7 +151,7 @@ def gen_athlete_page(data, outfile):
                      <h2>Gallery</h2>
                       </section>
                      </main>
-                     <footer>
+                     <footer id="contact-us">
                      <p>
                      Skyline High School<br>
                      <address>

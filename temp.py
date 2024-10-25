@@ -26,7 +26,7 @@ html_template = """
   <body>
     <header>
       <div class="top-banner">
-        <a href="index.html">Ann Arbor Skyline</a>
+        <a href="index.html">Ann Arbor Skyline XC</a>
       </div>
     </header>
     <nav class="navbar">
@@ -34,7 +34,7 @@ html_template = """
         <li><a href="#teams-section">Teams</a></li>
         <li><a href="#calandar">Calandar</a></li>
         <li><a href="#gallery">Gallery</a></li>
-        <li><a href="#contact-us">Contact US</a></li>
+        <li><a href="#contact-us">Contact</a></li>
       </ul>
     </nav>
     <main class="content-section">
@@ -45,11 +45,11 @@ html_template = """
         <div class="team-container">
           <!-- Mens Team -->
           <div class="team">
-            <h2>Men's Team</h2>
+            <h2>Mens</h2>
             <table>
-              <caption>
+              <th>
                 Athlete Name
-              </caption>
+              </th>
               <tr>
                 {mens_team_athletes}
               </tr>
@@ -58,11 +58,11 @@ html_template = """
 
           <!-- Womens Team -->
           <div class="team">
-            <h2>Women's Team</h2>
+            <h2>Womens</h2>
             <table>
-              <caption>
+              <th>
                 Athlete Name
-              </caption>
+              </th>
               <tr>
                 {womens_team_athletes}
               </tr>
@@ -81,10 +81,10 @@ html_template = """
       </section>
 
       <!-- Photo Gallery Section -->
-      <section id="gallery"  class="content">
-        <div class="gallery">
-          <h1>Photo Gallery</h1>
-          {gallery_section}
+      <section id="gallery"  class="gallery">
+        <h2>Photo Gallery</h2>
+        <div class="photo-grid">
+        {gallery_section}
         </div>
       </section>
     </main>
@@ -92,7 +92,7 @@ html_template = """
     <!-- Contact Section -->
     <footer>
       <div id="contact-us" class="contact">
-        <h1>Contact Us</h1>
+        <h2>Contact Us</h2>
         <p>Email: contact@xcountry.org</p>
         <p>Phone: (123) 456-7890</p>
         <p>Address: 123 XCountry Lane, City, State, ZIP</p>
