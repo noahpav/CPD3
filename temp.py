@@ -32,7 +32,7 @@ html_template = """
     <nav class="navbar">
       <ul>
         <li><a href="#teams-section">Teams</a></li>
-        <li><a href="#calandar">Calandar</a></li>
+        <li><a href="#calendar">Calendar</a></li>
         <li><a href="#gallery">Gallery</a></li>
         <li><a href="#contact-us">Contact</a></li>
       </ul>
@@ -46,6 +46,7 @@ html_template = """
           <!-- Mens Team -->
           <div class="team">
             <h2>Mens</h2>
+            <details><summary>Team</summary>
             <table>
               <th>
                 Athlete Name
@@ -53,12 +54,13 @@ html_template = """
               <tr>
                 {mens_team_athletes}
               </tr>
-            </table>
+            </table></details>
           </div>
 
           <!-- Womens Team -->
           <div class="team">
             <h2>Womens</h2>
+            <details><summary>Team</summary>
             <table>
               <th>
                 Athlete Name
@@ -66,13 +68,13 @@ html_template = """
               <tr>
                 {womens_team_athletes}
               </tr>
-            </table>
+            </table></details>
           </div>
         </div>
       </section>
 
       <!-- Events Section -->
-      <section id="calandar" class="content">
+      <section id="calendar" class="calendar">
         <h2>Season Calendar</h2>
         <ul>
             <li>August 18, 2023 - <a href=https://www.athletic.net/CrossCountry/meet/221431/info>Lamplighter Invite</a></li>

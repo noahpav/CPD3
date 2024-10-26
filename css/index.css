@@ -7,23 +7,44 @@
 }
 
 
-/* General Page Syling */
-h1 {
-    text-align: center;
-    font-size: 2.5rem;
-}
-
+/* Styling for General Page */
 h2 {
     text-align: center;
     font-size: 1.8rem;
 }
 
-/* Teams Section Styling */
+/* Styling for Teams Section */
+h1 {
+    text-align: center;
+    font-size: 2.5rem;
+    border-bottom: solid #9bddff;
+    border-radius: 10px;
+}
+.teams-section {
+    border: solid #9bddff;
+    border-radius: 15px;
+    margin-bottom: 3px;
+}
+.team summary {
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
 table td {
     text-align: center;
 }
 
-/* Gallery Section Styling */
+/* Styling for Season Calendar */
+.calendar {
+    border: solid #9bddff;
+    border-radius: 15px;    
+}
+.calendar h2 {
+    border-bottom: solid #9bddff;
+    border-radius: 10px;
+}
+
+/* Styling for Gallery Section */
 #gallery {
     text-align: center;
 }

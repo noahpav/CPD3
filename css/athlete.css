@@ -15,39 +15,91 @@ h2 {
 }
 
 /* Profile Section Styling */
-h1{
+h1 {
     text-align: center;
     font-size: 1.2rem;
     padding-top: 10px;
     padding-bottom: 20px;
     line-height: 1;
 }
-#profile h3 {
+#profile {
+    display: grid;
+    grid-template-columns: 60% 40%;
+    border: solid #9bddff;
+    border-radius: 15px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-bottom: 3px;
+}
+#profile p {
     text-align: left;
-    font-size: 0.7rem;
+    font-size: .8rem;
+    font-weight: bold;
+    line-height: 1.1;
     padding-bottom: 10px;
 }
-#profile img {
-    padding: 10px;
+.img-container {
+    width: 100%;
+    border-right: solid #9bddff;
+    border-radius: 22px;
+}
+#profile img  {
+    width: 100%;
+    padding: 8px 8px 0px 0px;
+    border-radius: 25px;
 }
 
 /* Season Reacord Section Styling */
 #athlete-sr-table {
     width: 100%;
-    padding-bottom: 10px;
+    padding: 8px 5px 3px 5px;
+    border: solid #9bddff;
+    border-radius: 15px;
+    margin-bottom: 3px;
 }
-
+#athlete-sr-table h2 {
+    border-bottom: solid #9bddff;
+    border-radius: 8px;
+    padding-bottom: 8px;
+}
+#athlete-sr-table table{
+    width: 100%;
+    border-spacing: 0;
+}
+#athlete-sr-table thead{
+    background-color: #e7f7ff;
+}
+#athlete-sr-table tr:nth-child(even){
+    background-color: #e7f7ff;
+}
 /* Race Results Section Styling */
 #athlete-result-table {
     width: 100%;
-    padding-bottom: 10px;
+    padding: 8px 5px 3px 5px;
+    border: solid #9bddff;
+    border-radius: 15px;
+    box-sizing: border-box;
+    margin-bottom: 3px;
+}
+#athlete-result-table h2{
+    border-bottom: solid #9bddff;
+    border-radius: 8px;
+    padding-bottom: 8px;
 }
 #athlete-result-table thead {
     text-align: center;
-    font-size: 1.1rem;
+    font-size: 0.9rem;
+    background-color: #e7f7ff;
+}
+#athlete-result-table a {
+    color: #2e2e2e;
+}
+#athlete-result-table tr:nth-child(even) {
+    background-color: #e7f7ff;
 }
 #athlete-table {
-    border-spacing: 2px 6px;
+    width: 100%;
+    border-spacing: 0 5px;
 }
 .result-row {
     width: 100%;

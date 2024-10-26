@@ -3,15 +3,19 @@ import csv
 
 def process_athlete_data(file_path):
    """Process Athlete Data."""
-   # Extracting athlete stats by year
+
+   # Sampple Code Variables
    records = []
-
-   # Extracting athlete races
    races = []           
-
    athlete_name = ""
    athlete_id = ""
    comments = ""
+
+   # New Variables
+   min_fin = 9999
+   personal_record = None
+   exp_years = []
+   grades = []
 
    with open(file_path, newline='', encoding='utf-8') as file:
       reader = csv.reader(file)
@@ -24,6 +28,12 @@ def process_athlete_data(file_path):
       for row in data[5:-1]:
          if row[2]:
             records.append({"year": row[2], "sr": row[3]})
+            # keep track of years and grades for profile 
+            exp_years.append (row[2])
+            grades.append(row[3])
+            # Check for PR for profile personal record
+            if "PR" in row[3]:
+               personal_record = row[3]
          else:
             races.append({
                "finish": row[1],
@@ -33,12 +43,41 @@ def process_athlete_data(file_path):
                "comments": row[7]
             })
 
+      # Calculate Experience
+      experience = len(exp_years)
+
+      # Calculate Grade Level
+      grade = grades[-1]
+      grade_txt = "N/A"
+      if grade == "9":
+         grade_txt = "Freshman"
+      if grade == "10":
+         grade_txt = "Sophomore"
+      if grade == "11":
+         grade_txt = "Junior"
+      if grade == "12":
+         grade_txt = "Senior"
+
+      # Calculate Top Place
+      for index, place in enumerate(races):
+         finish = place["finish"].strip()
+
+         # fin_int = int(finish)
+         # if fin_int < min_fin:
+         #    min_fin = fin_int
+
+      print(f"finish: {finish}")
+
    return {
       "name": athlete_name,
       "athlete_id": athlete_id,
       "season_records": records,
       "race_results": races,
-      "comments": comments
+      "comments": comments,
+      "grade_txt": grade_txt,
+      "experience": experience,
+      "top_place": min_fin,
+      "PR": personal_record,
    }    
 
 def gen_athlete_page(data, outfile):
@@ -62,7 +101,7 @@ def gen_athlete_page(data, outfile):
    <body>
    <header>
       <div class="top-banner">
-         <a href="../index.html">Ann Arbor Skyline</a>
+         <a href="../index.html">Ann Arbor Skyline XC</a>
       </div>
    </header>
    <nav class="navbar">
@@ -70,21 +109,23 @@ def gen_athlete_page(data, outfile):
          <li><a href="#athlete-sr-table">Records</a></li>
          <li><a href="#results">Results</a></li>
          <li><a href="#gallery">Gallery</a></li>
-         <li><a href="#contact-us">Contact</a></li>
+         <li><a href="  #contact-us">Contact</a></li>
       </ul>
    </nav>
-   <section id="profile">
+   <main id = "main">
+      <section id="profile">
       <!--Athlete would input headshot-->
-      <img src="../images/profiles/{data["athlete_id"]}.jpg" alt="Athlete headshot" width="200"> 
+      <div class="img-container">
+         <img src="../images/profiles/{data["athlete_id"]}.jpg" alt="Athlete headshot" width="200"> 
+      </div>
       <div>
          <h1>{data["name"]}</h1>
-         <h3>Grade: </h3>
-         <h3>Experience: </h3>
-         <h3>Top Place: </h3>
-         <h3>Personal Record: </h3>
+         <p class="profile_head">Grade: {data["grade_txt"]}</p>
+         <p class="profile_head">Experience: {data["experience"]} years</p>
+         <p class="profile_head">Top Place: {data["top_place"]}</p>
+         <p class="profile_head">Personal Record: {data["PR"]}</p>
       </div>
-   </section>
-   <main id = "main">
+      </section>
       <section id= "athlete-sr-table">
          <h2>Season Records (SR)</h2>
             <table>
