@@ -106,10 +106,10 @@ def gen_athlete_page(data, outfile):
    </header>
    <nav class="navbar">
       <ul>
+         <li><a href="#profile">Profile</a></li>
          <li><a href="#athlete-sr-table">Records</a></li>
-         <li><a href="#results">Results</a></li>
+         <li><a href="#athlete-result-table">Results</a></li>
          <li><a href="#gallery">Gallery</a></li>
-         <li><a href="  #contact-us">Contact</a></li>
       </ul>
    </nav>
    <main id = "main">

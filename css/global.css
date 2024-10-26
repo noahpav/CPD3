@@ -7,17 +7,6 @@
     box-sizing: border-box;
 }
 
-/* Base font and colors */
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    color: #2e2e2e;
-    background-color: #fdffff;
-    margin: 0;
-    padding: 0;
-    overflow-x: hidden;
-}
-
 /* Basic layout for header */
 header {
     background: #9bddff;        /* Ann Arbor Skyline Columbia Blue */
@@ -30,12 +19,24 @@ header a {
     color: black;
     text-decoration: none;
     font-size: 1.5em;
+    font-weight: bold;
 }
 /* header a:visited {
     color: #383838;
     text-decoration: none;
     font-size: 1.5em;
 } */
+
+/* Base font and colors */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    color: #2e2e2e;
+    background-color: #fdffff;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
 
 /* Basic layout for Navbar*/
 .navbar {
@@ -80,6 +81,11 @@ header a {
 /* Basic layout for main */
 main {
     padding: 15px 5px;
+}
+
+/* Basic layout for section */
+section {
+    scroll-margin-top: 50px;
 }
 
 /* Basic layout for footer */

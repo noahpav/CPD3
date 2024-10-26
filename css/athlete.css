@@ -65,6 +65,7 @@ h1 {
 #athlete-sr-table table{
     width: 100%;
     border-spacing: 0;
+    text-align: center;
 }
 #athlete-sr-table thead{
     background-color: #e7f7ff;
