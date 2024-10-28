@@ -30,7 +30,7 @@ def process_athlete_data(file_path):
             records.append({"year": row[2], "sr": row[3]})
             # keep track of years and grades for profile 
             exp_years.append (row[2])
-            grades.append(row[3])
+            grades.append(row[2])
             # Check for PR for profile personal record
             if "PR" in row[3]:
                personal_record = row[3]
@@ -62,9 +62,12 @@ def process_athlete_data(file_path):
       for index, place in enumerate(races):
          finish = place["finish"].strip()
 
-         # fin_int = int(finish)
-         # if fin_int < min_fin:
-         #    min_fin = fin_int
+         try:
+            fin_int = int(finish)
+            if fin_int < min_fin:
+               min_fin = fin_int
+         except ValueError:
+            pass
 
       print(f"finish: {finish}")
 
@@ -101,7 +104,8 @@ def gen_athlete_page(data, outfile):
    <body>
    <header>
       <div class="top-banner">
-         <a href="../index.html">Ann Arbor Skyline XC</a>
+         <img src="../images/Skyline.jpg" alt="School Logo" class="header-logo">
+         <a href="../index.html" class="home-link">Ann Arbor Skyline XC</a>
       </div>
    </header>
    <nav class="navbar">
@@ -116,9 +120,9 @@ def gen_athlete_page(data, outfile):
       <section id="profile">
       <!--Athlete would input headshot-->
       <div class="img-container">
-         <img src="../images/profiles/{data["athlete_id"]}.jpg" alt="Athlete headshot" width="200"> 
+         <img src="../images/profiles/{data["athlete_id"]}.jpg" alt="Athlete headshot"> 
       </div>
-      <div>
+      <div class="profile-bio">
          <h1>{data["name"]}</h1>
          <p class="profile_head">Grade: {data["grade_txt"]}</p>
          <p class="profile_head">Experience: {data["experience"]} years</p>

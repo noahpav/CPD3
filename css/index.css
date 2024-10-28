@@ -35,6 +35,7 @@ h1 {
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
+    cursor: pointer;
 }
 table td {
     text-align: center;
@@ -45,10 +46,17 @@ table td {
     border: solid #9bddff;
     border-radius: 15px;    
 }
+
 .calendar h2 {
     border-bottom: solid #9bddff;
     border-radius: 10px;
 }
+.calendar a {
+    color: #383838;
+}
+/* .calendar a:visited {
+    color: #383838;
+} */
 
 /* Styling for Gallery Section */
 #gallery {

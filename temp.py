@@ -26,6 +26,7 @@ html_template = """
   <body>
     <header>
       <div class="top-banner">
+        <img src="images/Skyline.jpg" alt="School Logo" class="header-logo">
         <a href="index.html">Ann Arbor Skyline XC</a>
       </div>
     </header>
@@ -93,13 +94,15 @@ html_template = """
     </main>
 
     <!-- Contact Section -->
-    <footer>
-      <div id="contact-us" class="contact">
-        <h2>Contact Us</h2>
-        <p>Email: contact@xcountry.org</p>
-        <p>Phone: (123) 456-7890</p>
-        <p>Address: 123 XCountry Lane, City, State, ZIP</p>
-      </div>
+    <footer id="contact-us">
+      <p>
+        Skyline High School<br>
+        <address>
+          2552 North Maple Road<br>
+          Ann Arbor, MI 48103<br><br>
+            <a href = "https://sites.google.com/aaps.k12.mi.us/skylinecrosscountry2021/home">XC Skyline Page</a><br>
+            Follow us on Instagram <a href = "https://www.instagram.com/a2skylinexc/"><i class="fa-brands fa-instagram" aria-label="Instagram"></i>
+            </a> 
     </footer>
   </body>
 </html>
