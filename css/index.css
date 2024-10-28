@@ -62,3 +62,54 @@ table td {
 #gallery {
     text-align: center;
 }
+
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+
+    /* Teams Section */
+    h1 {
+        border-bottom: solid #8ccbeb;
+    }
+
+    .teams-section {
+        border: solid #8ccbeb;
+        background-color: #1a1a1a;
+        /* Dark background */
+    }
+
+    .teams-section a {
+        color: #8ccbeb;
+        /* Light blue for readability */
+    }
+
+    /* Calendar Section */
+    .calendar {
+        border: solid #8ccbeb;
+        background-color: #1a1a1a;
+    }
+
+    .calendar h2 {
+        border-bottom: solid #8ccbeb;
+    }
+
+    .calendar a {
+        color: #8ccbeb;
+    }
+
+    /* Gallery Section */
+    #gallery {
+        color: #8ccbeb;
+        background-color: #121212;
+    }
+
+    /* Team summary */
+    .team summary {
+        color: #8ccbeb;
+    }
+
+    /* Table styling */
+    table td {
+        color: #8ccbeb;
+    }
+}
