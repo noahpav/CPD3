@@ -139,7 +139,6 @@ footer a {
     text-decoration: none;
 } */
 
-
 /* Night Mode Styles */
 @media (prefers-color-scheme: dark) {
     /* Body and Backgrounds */
@@ -186,7 +185,7 @@ footer a {
     footer a {
         color: #8ccbeb;
     }
-}
+} 
 
 /* Reduced motion adjustments */
 @media (prefers-reduced-motion: reduce) {
@@ -211,4 +210,4 @@ footer a {
     .navbar a:hover::after {
         transform: none;
     }
-}
+} 
