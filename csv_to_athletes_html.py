@@ -95,7 +95,6 @@ def gen_athlete_page(data, outfile):
       <!-- Get your own FontAwesome ID -->
       <script src="https://kit.fontawesome.com/YOUR_ID.js" crossorigin="anonymous"></script>
 
-      <link rel = "stylesheet" href = "../css/reset.css">
       <link rel = "stylesheet" href = "../css/global.css">
       <link rel = "stylesheet" href = "../css/athlete.css">
 
@@ -124,10 +123,10 @@ def gen_athlete_page(data, outfile):
       </div>
       <div class="profile-bio">
          <h1>{data["name"]}</h1>
-         <p class="profile_head">Grade: {data["grade_txt"]}</p>
-         <p class="profile_head">Experience: {data["experience"]} years</p>
-         <p class="profile_head">Top Place: {data["top_place"]}</p>
-         <p class="profile_head">Personal Record: {data["PR"]}</p>
+         <p class="profile_head"><span>Grade:</span> {data["grade_txt"]}</p>
+         <p class="profile_head"><span>Experience:</span> {data["experience"]} years</p>
+         <p class="profile_head"><span>Top Place:</span> {data["top_place"]}</p>
+         <p class="profile_head"><span>Personal Record:</span> {data["PR"]}</p>
       </div>
       </section>
       <section id= "athlete-sr-table">

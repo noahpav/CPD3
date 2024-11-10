@@ -1,13 +1,5 @@
 /* athlete.css */
 
-/* Grid Template Setup */
-#profile {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    padding: 15px 5px;
-}
-
 /* Athlete Page General Styling */
 h2 {
     text-align: center;
@@ -25,6 +17,7 @@ h1 {
 #profile {
     display: grid;
     grid-template-columns: 60% 40%;
+    gap: 10px;
     border: solid #9bddff;
     border-radius: 15px;
     padding-top: 3px;
@@ -59,7 +52,7 @@ h1 {
     transform: scale(1.5);
 }
 
-/* Season Reacord Section Styling */
+/* Season Record Section Styling */
 #athlete-sr-table {
     width: 100%;
     padding: 8px 5px 3px 5px;
@@ -120,6 +113,88 @@ h1 {
     font-size: 0.9rem;
 }
 
+/* ################################################################################################################################ */
+
+/* Tablet View */
+@media (min-width: 768px) {
+    /* Profile Section Changes*/
+    h1 {
+        font-size: 3.5rem;
+    }
+    #profile {
+        grid-template-columns: 2fr 1fr;
+        gap: 20px;
+        padding: 20px 10px;
+        margin-bottom: 20px;
+    }
+    #profile p {
+        font-size: 1.4rem;
+        text-align: right;
+        border-top: solid;
+        border-bottom: solid;
+        border-radius: 12px;
+        padding-top: 15px;
+        margin: 5px 0 5px 0;
+    }
+    #profile span {
+        display: block;
+        font-size: 2.2rem;
+        text-align: left;
+    }
+    #profile img {
+        height: auto;
+    }
+
+    /* Season Record Section Changes */
+    #athlete-sr-table h2 {
+        font-size: 2.2rem;
+        padding-top: 10px;
+        padding-bottom: 25px;
+    }
+    #athlete-sr-table {
+        padding: 10px;
+        margin-bottom: 25px;
+    }
+    #athlete-sr-table th {
+        font-size: 1.5rem;
+    }
+    #athlete-sr-table tr {
+        font-size: 1.35rem;
+    }
+
+    /* Race Result Section Changes */
+    #athlete-result-table h2 {
+        font-size: 2.2rem;
+        padding-top: 10px;
+        padding-bottom: 20px;
+    }
+    #athlete-result-table table {
+        font-size: 20rem;
+        border-spacing: 0 10px;
+    }
+    #athlete-table th {
+        font-size: 1.6rem;
+    }
+    #athlete-table tr {
+        font-size: 1.25rem;
+    }
+    .result-row {
+        padding: 10px;
+    }
+
+    /* Gallery Section Changes */
+    #gallery {
+        font-size: 2.2rem;
+        padding-top: 25px;
+        padding-bottom: 25px;
+        margin: 30px auto;
+    }
+}
+
+/* Desktop View */
+@media (min-width: 1024px) {
+
+}
 
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {

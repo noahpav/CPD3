@@ -57,12 +57,118 @@ table td {
 /* .calendar a:visited {
     color: #383838;
 } */
+.calendar ul {
+    list-style-type: none;
+    padding-left: 10px;
+}
 
 /* Styling for Gallery Section */
 #gallery {
     text-align: center;
 }
 
+/* ################################################################################################################################ */
+
+/* Tablet View */
+@media (min-width: 768px) {
+
+    /* Team Container */
+    .team-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+    }
+
+    /* General Changes */
+    h1 {
+        font-size: 3.5rem;
+        padding-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 2.5rem;
+        padding-bottom: 10px;
+    }
+
+    /* Teams Section */
+    .teams-section {
+        padding: 15px;
+        margin-bottom: 20px;
+    }
+
+    .team summary {
+        font-size: 2.2rem;
+    }
+
+    /* Table Section */
+    table {
+        padding: 10px;
+    }
+
+    table th {
+        font-size: 1.8rem;
+    }
+
+    table td {
+        font-size: 1.5rem;
+    }
+
+    /* Calendar Section */
+    .calendar {
+        font-size: 1.6rem;
+        padding: 15px;
+    }
+
+    /* Gallery Section */
+    #gallery {
+        margin: 10px auto;
+    }
+}
+
+/* Desktop View */
+@media (min-width: 1024px) {
+    /* General Changes */
+    h1 {
+        font-size: 4rem;
+        padding-bottom: 20px;;
+    }
+    h2 {
+        font-size: 3rem;
+        padding-bottom: 20px;
+    }
+
+    /* Teams Section */
+    .teams-section {
+        padding: 20px;
+        border-width: 2px;
+    }
+    .team summary {
+        font-size: 2.8rem;
+    }
+
+    /* Table Section */
+    table {
+        padding: 10px;
+    }
+
+    table th {
+        font-size: 2.2rem;
+    }
+
+    table td {
+        font-size: 1.8rem;
+    }
+
+    /* Calendar Section */
+    .calendar {
+        font-size: 1.8rem;
+        padding: 20px;
+    }
+
+    /* Gallery Section */
+    #gallery {
+        margin: 30px auto;
+    }
+}
 
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
