@@ -113,6 +113,11 @@ h1 {
     font-size: 0.9rem;
 }
 
+/* Trends Section */
+#resultsChart {
+    color: #2e2e2e;
+}
+
 /* ################################################################################################################################ */
 
 /* Tablet View */
@@ -191,11 +196,6 @@ h1 {
     }
 }
 
-/* Desktop View */
-@media (min-width: 1024px) {
-
-}
-
 /* Dark Mode */
 @media (prefers-color-scheme: dark) {
     /* Season Record Section Styling */
@@ -238,4 +238,9 @@ h1 {
     .result-row {
         color: #8ccbeb;
     }
+
+    /* Trends Section */
+    #resultsChart {
+        color: #8ccbeb;
+    }             
 }

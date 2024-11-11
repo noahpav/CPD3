@@ -113,9 +113,12 @@ table td {
     }
     h2 {
         font-size: 2.5rem;
-        padding-bottom: 10px;
+        padding-bottom: 15px;
     }
     /* Favorites Section */
+    #favorites-section {
+        margin-bottom: 20px;
+    }
     #favorites-section li {
         font-size: 1.5rem;
     }

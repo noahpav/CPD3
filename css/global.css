@@ -118,7 +118,7 @@ main {
     padding: 15px 5px;
 }
 
-/* Basic layout for section */
+/* Adjusts Page Landing For NavBar placement */
 section {
     scroll-margin-top: 50px;
 }
@@ -156,6 +156,11 @@ footer a {
     .navbar ul {
         font-size: 1.8rem;
         gap: 10px;
+    }
+
+    /* Adjusts Page Landing For NavBar placement */
+    section {
+        scroll-margin-top: 80px;
     }
 
     /* Increase font size */
