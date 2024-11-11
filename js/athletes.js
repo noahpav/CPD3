@@ -5,23 +5,20 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Extract data from table
   resultsRows.forEach((row) => {
-    let raceName = row.querySelector("td:first-child a").textContent.trim(); // Race name
+    let raceName = row.querySelector("td:first-child a").textContent.trim();
+    raceName = raceName.split(" ").slice(0, 4).join(" ");
 
-    // Truncate race name to the first 5 words
-    raceName = raceName.split(" ").slice(0, 5).join(" ");
-
-    const timeText = row.querySelector("td:nth-child(2)").textContent.trim(); // Time (e.g., "19:21.4 SR")
+    const timeText = row.querySelector("td:nth-child(2)").textContent.trim();
 
     // Clean the time string (remove non-numeric characters like "SR")
-    const cleanTimeText = timeText.replace(/[^0-9:.]/g, ""); // Keeps only numbers and colons
-    const [minutes, seconds] = cleanTimeText.split(":").map(Number); // Split into minutes and seconds
-    const timeInMinutes = minutes + seconds / 60; // Convert to decimal minutes
+    const cleanTimeText = timeText.replace(/[^0-9:.]/g, "");
+    const [minutes, seconds] = cleanTimeText.split(":").map(Number);
+    const timeInMinutes = minutes + seconds / 60;
 
-    labels.push(raceName); // Add truncated race name
-    times.push(timeInMinutes); // Add race time in minutes
+    labels.push(raceName);
+    times.push(timeInMinutes);
   });
 
-  // Reverse the arrays to flip the x-axis direction
   labels.reverse();
   times.reverse();
 
@@ -36,11 +33,11 @@ document.addEventListener("DOMContentLoaded", function () {
     return new Chart(ctx, {
       type: "line",
       data: {
-        labels: labels, // Reversed and truncated X-axis labels
+        labels: labels,
         datasets: [
           {
             label: "Race Times (Minutes)",
-            data: times, // Reversed Y-axis data
+            data: times,
             borderColor: "rgba(75, 192, 192, 1)",
             backgroundColor: "rgba(75, 192, 192, 0.2)",
             pointBackgroundColor: "rgba(75, 192, 192, 1)",
@@ -59,7 +56,7 @@ document.addEventListener("DOMContentLoaded", function () {
             display: true,
             text: "Athlete Race Times",
             font: { size: 18, family: "Arial", weight: "bold" },
-            color: textColor, // Dynamic title color
+            color: textColor,
           },
           tooltip: {
             callbacks: {
@@ -69,7 +66,7 @@ document.addEventListener("DOMContentLoaded", function () {
             },
           },
           legend: {
-            display: false, // Legend removed
+            display: false,
           },
         },
         scales: {
@@ -77,29 +74,41 @@ document.addEventListener("DOMContentLoaded", function () {
             title: {
               display: true,
               text: "Races (Oldest to Newest)",
-              color: textColor,
-            }, // Dynamic x-axis title color
-            ticks: { color: textColor }, // Dynamic x-axis labels color
-            grid: { color: "rgba(200, 200, 200, 0.3)" }, // Subtle grid color
+              color: textColor, // Dynamic x-axis title color
+            },
+            ticks: {
+              color: textColor, // Dynamic x-axis labels color
+            },
+            grid: {
+              color: "rgba(200, 200, 200, 0.3)", // Subtle grid color
+            },
           },
           y: {
-            title: { display: true, text: "Time (Minutes)", color: textColor }, // Dynamic y-axis title color
-            ticks: { color: textColor, callback: (value) => `${value} mins` }, // Dynamic y-axis labels color
-            grid: { color: "rgba(200, 200, 200, 0.3)" }, // Subtle grid color
+            title: { display: true, text: "Time (MM:SS)", color: textColor }, // Update axis title
+            ticks: {
+              color: textColor,
+              stepSize: 0.25, // 15 seconds = 0.25 minutes
+              callback: (value) => {
+                const totalSeconds = Math.round(value * 60); // Convert minutes to total seconds
+                const minutes = Math.floor(totalSeconds / 60); // Get whole minutes
+                const seconds = totalSeconds % 60; // Get remaining seconds
+                return `${minutes}:${seconds.toString().padStart(2, "0")}`; // Format as MM:SS
+              },
+            },
+            grid: { color: "rgba(200, 200, 200, 0.3)" },
           },
         },
       },
     });
   }
 
-  // Initial rendering of the chart
   let chart = renderChart();
 
-  // Listen for changes in the user's color preference and update the chart
+  // Listen for changes in the user's color preference
   window
     .matchMedia("(prefers-color-scheme: dark)")
     .addEventListener("change", () => {
-      chart.destroy(); // Destroy the existing chart
-      chart = renderChart(); // Re-render the chart with updated colors
+      chart.destroy();
+      chart = renderChart();
     });
 });

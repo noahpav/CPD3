@@ -111,7 +111,7 @@ def gen_athlete_page(data, outfile):
          <li><a href="#profile">Profile</a></li>
          <li><a href="#athlete-sr-table">Records</a></li>
          <li><a href="#athlete-result-table">Results</a></li>
-         <li><a href="#gallery">Gallery</a></li>
+         <li><a href="#trends">Trends</a></li>
       </ul>
    </nav>
    <main id = "main">
@@ -185,9 +185,12 @@ def gen_athlete_page(data, outfile):
                   </tbody>
             </table>
       </section>
-      <section id = "gallery">
+      <section id = "trends">
          <h2>Trends</h2>
-         <canvas id="resultsChart" width="800" height="400"></canvas>
+         <p>Rotate To See Graph</p>
+         <div>
+            <canvas id="resultsChart"></canvas>
+         </div>
       </section>
    </main>
    <footer id="contact-us">

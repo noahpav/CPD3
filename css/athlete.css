@@ -114,8 +114,22 @@ h1 {
 }
 
 /* Trends Section */
-#resultsChart {
-    color: #2e2e2e;
+#trends {
+    border: solid #9bddff;
+    border-radius: 15px;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    margin-bottom: 3px;
+}
+#trends h2 {
+    padding-top: 5px;
+}
+#trends p {
+    text-align: center;
+    padding: 5px;
+}
+#trends div {
+    display: none;
 }
 
 /* ################################################################################################################################ */
@@ -125,6 +139,9 @@ h1 {
     /* Profile Section Changes*/
     h1 {
         font-size: 3.5rem;
+    }
+    h2 {
+        font-size: 2.2rem;
     }
     #profile {
         grid-template-columns: 2fr 1fr;
@@ -138,6 +155,7 @@ h1 {
         border-top: solid;
         border-bottom: solid;
         border-radius: 12px;
+        border-color: #9bddff;
         padding-top: 15px;
         margin: 5px 0 5px 0;
     }
@@ -152,7 +170,6 @@ h1 {
 
     /* Season Record Section Changes */
     #athlete-sr-table h2 {
-        font-size: 2.2rem;
         padding-top: 10px;
         padding-bottom: 25px;
     }
@@ -169,7 +186,6 @@ h1 {
 
     /* Race Result Section Changes */
     #athlete-result-table h2 {
-        font-size: 2.2rem;
         padding-top: 10px;
         padding-bottom: 20px;
     }
@@ -187,12 +203,23 @@ h1 {
         padding: 10px;
     }
 
-    /* Gallery Section Changes */
-    #gallery {
-        font-size: 2.2rem;
-        padding-top: 25px;
-        padding-bottom: 25px;
-        margin: 30px auto;
+    /* Trends Section */
+    #trends {
+        margin-top: 20px;
+    }
+    #trends h2 {
+        padding: 15px 0 5px 0;
+    }
+    #trends p {
+        display: none;
+    }
+    #trends div {
+        display: block;
+    }
+    #resultsChart {
+        width: 800;
+        height: 400;
+        color: #2e2e2e;
     }
 }
 
