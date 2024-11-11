@@ -174,47 +174,6 @@ footer a {
     }
 }
 
-/* Desktop View */
-@media (min-width: 1024px) {
-    /* Header Changes */
-    header {
-        padding: 30px 20px;
-    }
-    .top-banner {
-        grid-template-columns: auto 1fr;
-    }
-    header img {
-        width: 150px;
-    }
-
-    /* Navbar Changes */
-    .navbar ul {
-        display: flex;
-        justify-content: space-around;
-    }
-    .navbar a {
-        padding: 10px 20px;
-    }
-
-    /* Expand layout for body and general text */
-    body {
-        font-size: 1.8em;
-        line-height: 1.8em;
-    }
-    
-    /* Section Alignment */
-    main {
-        margin: 0 auto;
-    }
-
-    /* Footer Changes */
-    footer {
-        font-size: 1.2em;
-        padding: 40px 20px;
-    }
-
-}
-
 /* Night Mode Styles */
 @media (prefers-color-scheme: dark) {
     /* Body and Backgrounds */
